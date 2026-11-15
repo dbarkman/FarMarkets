@@ -7,7 +7,7 @@ html, body { height: 100%; margin: 0; }
 html { font-size: 100%; -webkit-text-size-adjust: 100%; }
 body {
   background: var(--page); color: var(--ink); font-family: var(--font-b); line-height: 1.35;
-  -webkit-tap-highlight-color: transparent; overscroll-behavior: none; transition: background .5s;
+  -webkit-tap-highlight-color: transparent; overscroll-behavior: none; transition: background .5s; touch-action: manipulation;
 }
 button, input { font: inherit; color: inherit; }
 button { cursor: pointer; border: 0; background: none; padding: 0; text-align: inherit; touch-action: manipulation; }
@@ -226,7 +226,7 @@ input[type=range]::-moz-range-thumb { width: 1.75rem; height: 1.75rem; border-ra
 .arrive-card { width: 100%; text-align: center; align-items: stretch; margin: auto 0; }
 .arrive-card h2 { font-family: var(--font-d); font-weight: var(--w-d); font-size: 2.5rem; line-height: 1.05; }
 .arrive-card .eyebrow, .arrive-card .blurb { color: var(--panel-ink-2); }
-.big { font-family: var(--font-d); font-weight: var(--w-d); font-size: 3rem; line-height: 1; }
+.big { font-family: var(--font-d); font-weight: var(--w-d); font-size: 3rem; line-height: 1.15; }
 .big.neg { color: var(--down); }
 .how { display: flex; align-items: center; justify-content: center; gap: .5rem; padding: .5rem 0; }
 .how div { display: flex; flex-direction: column; align-items: center; gap: .25rem; flex: 1; }

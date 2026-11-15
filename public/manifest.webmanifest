@@ -1,0 +1,10 @@
+{
+  "name": "Far Markets",
+  "short_name": "Far Markets",
+  "description": "A trading game across three ages: sail, the Silk Road and the stars.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#12151c",
+  "theme_color": "#12151c",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

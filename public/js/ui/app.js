@@ -638,7 +638,7 @@ ${s.hull < 100 ? `<button class="btn" data-act="repair" ${s.cash < rp ? 'disable
   } else cards.push(`<section class="card off"><h3>${w.lender}</h3><p>None here. ${where('lender')} You owe ${fmt(Math.ceil(s.debt))} ${m}.</p></section>`);
 
   if (E.hasService(pack, s, 'bank')) {
-    cards.push(`<section class="card"><h3>${w.bank}</h3><p>${s.bank >= 1 ? `${fmt(Math.floor(s.bank))} ${m} in safe keeping, earning a little.` : `${w.money} kept here is safe from ${w.hostile}, and earns a little.`}</p>
+    cards.push(`<section class="card"><h3>${w.bank}</h3><p>${s.bank >= 1 ? `${fmt(Math.floor(s.bank))} ${m} in safe keeping, earning a little.` : `What you keep here is safe from ${w.hostile}, and earns a little.`}</p>
 <div class="row2"><button class="btn" data-act="deposit" ${s.cash < 1 ? 'disabled' : ''}>Deposit</button><button class="btn ghost" data-act="withdraw" ${s.bank < 1 ? 'disabled' : ''}>Withdraw</button></div></section>`);
   } else if (s.bank >= 1) cards.push(`<section class="card off"><h3>${w.bank}</h3><p>No merchant house here. Your ${fmt(Math.floor(s.bank))} ${m} waits in safe keeping.</p></section>`);
 

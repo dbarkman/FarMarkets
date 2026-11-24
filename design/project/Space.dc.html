@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Space market</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#7FE7FF}a:hover{color:#FFFFFF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #060A12; color: #D6E6F2; font-family: 'IBM Plex Mono', ui-monospace, monospace; display: flex; flex-direction: column; position: relative; overflow: hidden">
+<svg aria-hidden="true" width="390" height="844" viewBox="0 0 390 844" style="position: absolute; top: 0; left: 0">
+<g fill="#D6E6F2">
+<circle cx="31" cy="42" r="1"/><circle cx="96" cy="18" r="0.8"/><circle cx="170" cy="60" r="1.2"/><circle cx="244" cy="26" r="0.7"/><circle cx="352" cy="96" r="1"/><circle cx="18" cy="300" r="0.8"/><circle cx="372" cy="420" r="1.1"/><circle cx="12" cy="610" r="0.9"/><circle cx="378" cy="700" r="0.8"/><circle cx="200" cy="130" r="0.6"/>
+</g>
+<g fill="none" stroke="#7FE7FF" stroke-width="1" opacity="0.5">
+<circle cx="316" cy="64" r="34" stroke-dasharray="3 5"/><circle cx="316" cy="64" r="20"/>
+</g>
+<circle cx="316" cy="64" r="5" fill="#FFB14A"/>
+</svg>
+<div style="padding: 26px 20px 0 20px; display: flex; flex-direction: column; gap: 4px; position: relative">
+<div style="font-size: 12px; letter-spacing: 0.16em; color: #7FE7FF">DAY 042 // DOCKED</div>
+<h1 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-weight: 700; font-size: 36px; line-height: 1.05; letter-spacing: 0.04em; text-transform: uppercase; color: #FFFFFF">Kestrel Reach</h1>
+<div style="display: flex; gap: 8px; align-items: center">
+<span style="font-size: 12px; letter-spacing: 0.1em; color: #060A12; background: #7FE7FF; padding: 2px 8px; font-weight: 600">MINING</span>
+<span style="font-size: 12px; letter-spacing: 0.1em; color: #9FB4C4">TECH 3 · PATROLLED</span>
+</div>
+</div>
+<div style="margin: 20px 20px 0 20px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; position: relative">
+<div style="border: 1px solid #2B5873; background: #0B1522; padding: 10px 10px 8px 10px; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%); display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 11px; letter-spacing: 0.14em; color: #9FB4C4">CREDITS</div>
+<div style="font-family: 'Chakra Petch', sans-serif; font-weight: 600; font-size: 22px; color: #FFFFFF">12,480</div>
+</div>
+<div style="border: 1px solid #2B5873; background: #0B1522; padding: 10px 10px 8px 10px; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%); display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 11px; letter-spacing: 0.14em; color: #9FB4C4">DEBT</div>
+<div style="font-family: 'Chakra Petch', sans-serif; font-weight: 600; font-size: 22px; color: #FFB14A">3,200</div>
+</div>
+<div style="border: 1px solid #2B5873; background: #0B1522; padding: 10px 10px 8px 10px; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%); display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 11px; letter-spacing: 0.14em; color: #9FB4C4">BAY</div>
+<div style="font-family: 'Chakra Petch', sans-serif; font-weight: 600; font-size: 22px; color: #FFFFFF">46<span style="font-size: 14px; color: #9FB4C4">/80</span></div>
+</div>
+</div>
+<div style="padding: 20px 20px 6px 20px; display: flex; justify-content: space-between; align-items: baseline; position: relative">
+<h2 style="margin: 0; font-family: 'Chakra Petch', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: 0.18em; color: #7FE7FF">EXCHANGE</h2>
+<div style="font-size: 12px; color: #9FB4C4">cr / unit</div>
+</div>
+<div style="margin: 0 20px; display: flex; flex-direction: column; flex-grow: 1; border-top: 1px solid #2B5873; position: relative">
+<sc-for list="{{goods}}" as="g" hint-placeholder-count="6">
+<button type="button" style="all: unset; cursor: pointer; display: grid; grid-template-columns: 1fr 86px 70px; align-items: center; gap: 12px; padding: 10px 2px; border-bottom: 1px solid #1A3345; min-height: 44px">
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'Chakra Petch', sans-serif; font-weight: 600; font-size: 18px; letter-spacing: 0.04em; color: #FFFFFF">{{g.name}}</span>
+<span style="font-size: 12px; color: {{g.noteColor}}">{{g.note}}</span>
+</span>
+<span style="display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 2px; height: 12px">
+<sc-for list="{{g.cells}}" as="c" hint-placeholder-count="10"><span style="background: {{c}}"></span></sc-for>
+</span>
+<span style="text-align: right; font-weight: 600; font-size: 20px; color: {{g.priceColor}}">{{g.price}}</span>
+</button>
+</sc-for>
+</div>
+<nav style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; border-top: 1px solid #2B5873; background: #0B1522; padding: 10px 12px 18px 12px; position: relative">
+<a href="#exchange" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; min-height: 44px; font-size: 11px; letter-spacing: 0.12em; font-weight: 600; color: #060A12; background: #7FE7FF; clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px)">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18 l5 -6 l4 3 l7 -9"/><path d="M4 21 h16"/></svg>TRADE</a>
+<a href="#nav" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; min-height: 44px; font-size: 11px; letter-spacing: 0.12em">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="2"/><path d="M12 3 v4 M12 17 v4 M3 12 h4 M17 12 h4"/></svg>NAV</a>
+<a href="#dock" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; min-height: 44px; font-size: 11px; letter-spacing: 0.12em">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 l5 9 v6 l-5 -2 l-5 2 v-6 z"/><path d="M12 16 v5"/></svg>DOCK</a>
+<a href="#log" style="text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 0; min-height: 44px; font-size: 11px; letter-spacing: 0.12em">
+<svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4 h14 v16 h-14 z"/><path d="M8 9 h8 M8 13 h8 M8 17 h5"/></svg>LOG</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+renderVals() {
+const cyan = '#7FE7FF', amber = '#FFB14A', mute = '#9FB4C4', off = '#16293A', white = '#FFFFFF';
+const meter = (n, color) => Array.from({ length: 10 }, (_, i) => (i < n ? color : off));
+return { goods: [
+{ name: 'Ore', note: 'LOW · HOLDING 20', noteColor: cyan, cells: meter(2, cyan), price: '38', priceColor: cyan },
+{ name: 'Alloys', note: 'LOW', noteColor: cyan, cells: meter(3, cyan), price: '112', priceColor: cyan },
+{ name: 'Water', note: 'TYPICAL', noteColor: mute, cells: meter(5, mute), price: '24', priceColor: white },
+{ name: 'Medicine', note: 'HIGH · HOLDING 26', noteColor: amber, cells: meter(8, amber), price: '640', priceColor: amber },
+{ name: 'Machinery', note: 'HIGH', noteColor: amber, cells: meter(9, amber), price: '905', priceColor: amber },
+{ name: 'Starglass', note: 'TYPICAL', noteColor: mute, cells: meter(5, mute), price: '1,480', priceColor: white }
+] };
+}
+}
+</script>
+</body>
+</html>

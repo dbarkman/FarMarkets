@@ -38,6 +38,7 @@ browser loads the files in `public/` as they are.
 | `tests/engine.test.js` | Engine tests. |
 | `tools/bots.js`, `tools/balance.js` | Bot players and the balance report. |
 | `deploy/` | The Apache vhost for web2. |
+| `design/project/` | The reference drawing of each era's look: one market screen per era, as Claude Design canvas files. They open in the canvas (https://claude.ai/artifact/RgMAAndbnuSfAdBAuVHEEy), not on their own. The game does not load them. |
 
 ## How the market stays unsolved
 
